@@ -32,6 +32,7 @@
 | 15     | 1         | 1        | 1                  | 1                  |  19             | 19             | 13           | 14           | 20 *    | 0             |
 
 | number | invariant                         |
+| ------ | --------------------------------- |
 | 16     | Train Departed Without Approach   |
 | 17     | Timer Activated Withoout Approach |
 | 18     | Arms Down With No Alarm           |
