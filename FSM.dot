@@ -1,0 +1,35 @@
+digraph G {
+
+  idle[label="idle"];
+  idle->N1[label=NB_approach];
+  N1[label="Ringing, Arms Up"];
+  idle->S1[label=SB_approach];
+  S1[label="Ringing, Arms Up"];
+  N1->NS1[label="SB_approach"];
+  S1->NS1[label="NB_approach"];
+  NS1[label="Ringing, Arms Up"];
+  
+  N1->N2[label="Elapsed"];
+  N2[label="Ringing, Arms Down"];
+  S1->S2[label="Elapsed"];
+  S2[label="Ringing, Arms Down"];
+  NS1->NS2[label="Elapsed"];
+  NS2[label="Ringing, Arms Down"];
+  
+  N2->NS2[label="SB_approach"];
+  S2->NS2[label="NB_approach"];
+  NS2->N2[label="SB_depart"];
+  NS2->S2[label="NB_depart"];
+  
+  N2->N3[label="NB_depart"];
+  N3[label="Ringing, Arms Up"];
+  S2->S3[label="SB_depart"];
+  S3[label="Ringing, Arms Up"];
+  
+  S3->S1[label="SB_approach"];
+  N3->N1[label="NB_approach"];
+  S3->N1[label="NB_approach"];
+  N3->S1[label="SB_approach"];
+  N3->idle[label="Elapsed"];
+  S3->idle[label="Elapsed"];
+}
